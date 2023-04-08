@@ -1,0 +1,12 @@
+POST  http://localhost:3000/api/services
+Content-Type: : application/json
+
+{
+    "name": "Lollapalooza 2024",
+    "date": "03/04/2024",
+    "custo": "395",
+    "localizacao":"Autódromo José Carlos Pace",
+    "descricao": "Lollapalooza é um festival de música alternativa que acontece anualmente, é composto por gêneros como rock alternativo, heavy metal, punk rock, grunge e performances de comédia e danças, além de estandes de artesanato. Também fornece uma plataforma para grupos políticos e sem fins lucrativos",
+    "categoria": "Música",
+    "imagem":"https://www.google.com/url?sa=i&url=https%3A%2F%2Fhashtagpop.com.br%2Feventos%2Flollapalooza%2Flollapalooza-brasil-abre-pesquisa-para-internautas-escolherem-artistas-do-line-up-de-2021%2F&psig=AOvVaw09UJtpzENbEPGvI8cpsZ9S&ust=1680650268522000&source=images&cd=vfe&ved=0CBAQjRxqFwoTCLi6haTsjv4CFQAAAAAdAAAAABAJ"
+}
