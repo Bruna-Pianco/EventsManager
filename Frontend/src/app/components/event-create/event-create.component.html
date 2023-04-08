@@ -1,0 +1,58 @@
+<div mat-dialog-title>
+    <h1> CADASTRAR NOVO EVENTO</h1>
+</div>
+<form [formGroup]="empForm" (ngSubmit)="onFormSubmit()">
+<div mat-dialog-content class="content">
+   <div class="row">
+    <mat-form-field  required class="width" appearance="outline">
+        <mat-label>Nome do evento</mat-label>
+        <input required matInput type="text" formControlName="name">
+      </mat-form-field>
+    </div>
+    <div class="row">
+      <mat-form-field  class="width" appearance="outline">
+        <mat-label>Data do evento</mat-label>
+        <input  required  matInput [matDatepicker]="picker" formControlName="date">
+        <mat-hint>MM/DD/YYYY</mat-hint>
+        <mat-datepicker-toggle matIconSuffix [for]="picker"></mat-datepicker-toggle>
+        <mat-datepicker #picker></mat-datepicker>
+      </mat-form-field>
+    </div>
+    <div class="row">
+      <mat-form-field  appearance="outline">
+        <mat-label>Localização</mat-label>
+        <input required matInput type="text" formControlName="localizacao">
+      </mat-form-field>
+      <mat-form-field  appearance="outline">
+        <mat-label>Descrição</mat-label>
+        <input required matInput type="text" formControlName="descricao">
+      </mat-form-field>
+      <!-- <mat-form-field appearance="outline">
+        <mat-label>Categoria</mat-label>
+        <input matInput type="text">
+      </mat-form-field> -->
+     </div>
+     <div class="row">
+      <mat-form-field appearance="outline">
+        <mat-label>Preço $</mat-label>
+        <input required matInput type="text" formControlName="custo">
+      </mat-form-field>
+      <mat-form-field appearance="outline">
+        <mat-label>Categoria</mat-label>
+        <mat-select matNativeControl required formControlName="categoria">
+          <mat-option *ngFor="let val of Categoria" [value]="val">{{val}}</mat-option>
+        </mat-select>
+      </mat-form-field>
+     </div>
+     <div class="row"> 
+      <mat-form-field class="width"  appearance="outline">
+        <mat-label>Imagem</mat-label>
+        <input matInput formControlName="imagem">
+      </mat-form-field>
+   </div>
+</div>
+<div mat-dialog-action class="action">
+    <button class="row" mat-raised-button type="submit" color="primary">Salvar</button>
+    <button class="row" routerlink='/' mat-raised-button color="warn">Cancelar</button>
+</div>
+</form>

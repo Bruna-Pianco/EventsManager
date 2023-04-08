@@ -1,0 +1,37 @@
+.row{
+    display: flex;
+    gap: 10px;
+}
+
+.content{
+    padding-top: 10px;
+}
+
+.action{
+    align-items: center;
+    padding-left: 10px;
+}
+
+.mat-from-field{
+    width: 100%;
+}
+
+.action .save{
+    margin:15px;
+}
+
+button{
+    flex: auto;
+    width: 90%;
+    margin: 15px;
+}
+
+.width{
+    width: 100%;
+}
+
+
+h1{
+    /* color: #72CAAF; */
+    color: #001679;
+}
