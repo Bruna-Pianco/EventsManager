@@ -18,6 +18,15 @@ const eventsSchema = new Schema({
         type: String,
         require: true
     },
+
+    cidade: {
+        type: String,
+        require: true
+    },
+    contato: {
+        type: String,
+        require: true
+    },
     descricao: {
         type: String,
         require: true

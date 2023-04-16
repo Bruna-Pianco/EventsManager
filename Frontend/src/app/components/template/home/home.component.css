@@ -1,0 +1,51 @@
+.btn {
+    width: 20vh;
+    margin-bottom: 1vh;
+    font-size: 1.2vh;
+    margin-top: 1vh;
+    margin-left: 1vh;
+  }
+
+  .example-spacer {
+    flex: 1 1 auto;
+  }
+
+  mat-toolbar{
+    background-color: #F0F8FF;
+  }
+  
+  .btn:hover {
+    background-color: #4682B4;
+}
+
+
+
+    /* RESPONSIVIDADE */
+@media(max-width:992px) and (max-width:1220px) {
+
+  .btn {
+    width: 25vh;
+    margin-left: 5vh;
+    font-size: 15px;
+  }
+
+}
+
+@media(max-width:768px) and (max-width: 992px) {
+
+  .btn {
+    width: 25vh;
+    margin-left: 5vh;
+    font-size: 15px;
+  }
+
+}
+
+@media(max-width: 480px) and (max-width: 768px) {
+  .btn {
+    width: 25vh;
+    margin-left: 5vh;
+    font-size: 15px;
+  }
+
+}

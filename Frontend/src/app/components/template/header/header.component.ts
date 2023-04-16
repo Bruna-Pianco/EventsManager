@@ -9,12 +9,22 @@ import { EventCreateComponent } from '../../event-create/event-create.component'
   templateUrl: './header.component.html',
   styleUrls: ['./header.component.css']
 })
+
 export class HeaderComponent {
 
   constructor(public _dialog: MatDialog) {}
+
+  ngOnInit(): void {}
+
+  isAuthenticated: boolean = false;
 
   openEventCreateForm() {
     this._dialog.open(EventCreateComponent)
   }
 
+
+  // public logout() {
+  //   this.userAuthService.clear();
+  //   this.router.navigate(['/home']);
+  // }
 }

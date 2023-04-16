@@ -1,0 +1,118 @@
+main {
+    min-height: 80vh;
+}
+
+section.banner {
+    padding: 50px;
+}
+
+section.banner .container {
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+}
+
+.texto  h2{
+    color: #4682B4;
+    font-size: 20px;
+    text-transform: uppercase;
+}
+
+form {
+    flex: 0.4;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    background-color: #4682B4;
+    opacity: 0.96;
+    border-radius: 15px;
+    height: 40vh;    
+    padding-top: 3vh;
+    width: 40vh;
+    border-radius: 20px;
+}
+
+.login-wrapper {
+    display: flex;
+    flex-direction: column;
+    min-height: 35vh; 
+}
+
+.container {
+    width: 1200px;
+    max-width: 100%;
+    margin: 0 auto;
+}
+
+button {
+	color: #fff;
+	border: 1px solid #eee;
+	border-radius: 20px;
+	text-shadow: none;
+    
+}
+
+mat-form-field,
+button {
+    width: 70%;
+}
+
+h2 h3 {
+    text-decoration: none;
+    transition: .3s ease-in-out;
+    margin: 0px 5px;
+    font-family: Roboto, "Helvetica Neue", sans-serif;
+} 
+
+@keyframes flutuar {
+    0% {
+        transform: translateY(0);
+    }
+
+    50% {
+        transform: translateY(-15px);
+    }
+
+    100% {
+        transform: translateY(0);
+    }
+
+}
+
+.img-destaque {
+    animation: flutuar 3s infinite;
+}
+
+/* RESPONSIVIDADE */
+@media(max-width:900px) {
+
+    section.banner .container 
+    {
+
+        flex-wrap: wrap;
+
+    }
+
+    .texto .login-wrapper {
+        text-align: center;
+    }
+
+
+    section.banner .container .texto .login-wrapper{
+        text-align: center;
+    }
+
+    section.banner .login-wrapper{
+        padding: 0 40px 40px;
+    }
+
+
+}
+
+@media(max-width: 515px) {
+    header .container .login-wrapper{
+        flex-wrap: wrap;
+        justify-content: center;
+    }
+
+}

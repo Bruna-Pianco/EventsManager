@@ -3,7 +3,7 @@
   }
 
 .logo{
-    max-height: 50px;
+    max-height: 100px;
     padding-left: 25px;
     padding-right: 25px;
     padding-top: 11px;
@@ -13,9 +13,10 @@ h1{
   font-family: Roboto, "Helvetica Neue", sans-serif;
   color: white;
   padding-top: 20px;
+  font-size: 30px;
 
 }
 
 mat-toolbar{
-  background-color: black;
+  background-color: #4682B4;
 }

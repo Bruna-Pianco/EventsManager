@@ -10,7 +10,9 @@ const EventsController = {
                 custo: req.body.custo,
                 localizacao: req.body.localizacao,
                 descricao: req.body.descricao,
-                categoria: req.body.categoria,   
+                categoria: req.body.categoria, 
+                cidade:req.body.cidade, 
+                contato:req.body.contato, 
                 imagem: req.body.imagem,   
             };
             

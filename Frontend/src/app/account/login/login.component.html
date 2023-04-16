@@ -1,0 +1,26 @@
+<main>
+    <!-- conteúdo login -->
+    <section class="banner">
+        <div class="container">
+            <img class="img-destaque" src="../../../assets/img/img-login.png" alt="Ilustração de uma garota com uma calendário">
+            <div class="login-wrapper">
+                <div class="texto">
+                    <h2>Bem Vindo!</h2>
+                    <h3>Realize o login para ter acesso ao gerenciamento do seus eventos!</h3>
+                </div>
+                <form class="formulario">
+                    <mat-form-field>
+                        <input  [(ngModel)]="credentials.email" matInput placeholder="E-mail:"  name="email">
+                    </mat-form-field>
+                    <mat-form-field>
+                        <input [(ngModel)]="credentials.senha"  type='password' matInput placeholder="Senha:"  name="password">
+                    </mat-form-field>
+                    <button mat-raised-button type="submit" (click)="login()">
+                     Login
+                    </button>
+                </form>
+              </div>
+        </div>
+    </section>
+</main>
+

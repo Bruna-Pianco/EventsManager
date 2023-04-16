@@ -24,8 +24,8 @@
         <input required matInput type="text" formControlName="localizacao">
       </mat-form-field>
       <mat-form-field  appearance="outline">
-        <mat-label>Descrição</mat-label>
-        <input required matInput type="text" formControlName="descricao">
+        <mat-label>Cidade</mat-label>
+        <input required matInput type="text" formControlName="cidade">
       </mat-form-field>
       <!-- <mat-form-field appearance="outline">
         <mat-label>Categoria</mat-label>
@@ -44,15 +44,25 @@
         </mat-select>
       </mat-form-field>
      </div>
-     <div class="row"> 
-      <mat-form-field class="width"  appearance="outline">
-        <mat-label>Imagem</mat-label>
-        <input matInput formControlName="imagem">
-      </mat-form-field>
+   <div class="row">
+    <mat-form-field  appearance="outline">
+      <mat-label>Descrição</mat-label>
+      <input required matInput type="text" formControlName="descricao">
+    </mat-form-field>
+    <mat-form-field appearance="outline">
+      <mat-label>Contato</mat-label>
+      <input required matInput type="email" formControlName="contato">
+    </mat-form-field>
    </div>
+  <!-- <div class="row"> 
+      <mat-form-field class="width"  appearance="outline">
+        <ngx-mat-file-input  (change)= "onFileSelected($event)" matInput formControlName="imagem">
+          </ngx-mat-file-input>
+       </mat-form-field>
+   </div> -->
 </div>
+<input class="input" type='file' name="file" id="file" (change)="onChange($event)">
 <div mat-dialog-action class="action">
-    <button class="row" mat-raised-button type="submit" color="primary">Salvar</button>
-    <button class="row" routerlink='/' mat-raised-button color="warn">Cancelar</button>
+  <button class="row" mat-raised-button type="submit" color="primary">Salvar</button>
 </div>
 </form>
