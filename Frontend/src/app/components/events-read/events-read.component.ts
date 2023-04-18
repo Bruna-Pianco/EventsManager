@@ -5,7 +5,8 @@ import {MatPaginator} from '@angular/material/paginator';
 import {MatSort} from '@angular/material/sort';
 import {MatTableDataSource} from '@angular/material/table';
 import { MatDialog } from '@angular/material/dialog';
-import { EventCreateComponent } from '../event-create/event-create.component'
+
+ 
 
 @Component({
   selector: 'app-events-read',
@@ -42,10 +43,22 @@ export class EventsReadComponent implements OnInit {
     }
   }
 
-  displayedColumns: string[] = ['name', 'date','cidade','custo','contato'];
+  displayedColumns: string[] = ['_id','name', 'date','cidade','custoInteira','custoMeia','contato','action'];
   dataSource!: MatTableDataSource<any>;
 
   @ViewChild(MatPaginator) paginator!: MatPaginator;
   @ViewChild(MatSort) sort!: MatSort;
   
+
+  deleteevent(id:string){
+    this._eventService.deleteevent(id).subscribe({
+      next:(res) => {
+        alert('Evento deletado com sucesso!')
+        this.getEventsAll();
+
+      }, 
+      error:console.log,
+      
+    })
+  }
 }

@@ -27,8 +27,6 @@ export class HomeComponent  {
  status_adm: boolean = false;
 
  ngOnInit(): void {
-   const json = JSON.parse(String(sessionStorage.getItem('token'))) as ILogin;
-   this.status_adm = json.user.status_adm
  }
 
   openEventCreateForm() {

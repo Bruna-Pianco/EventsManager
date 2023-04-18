@@ -43,5 +43,3 @@ export class UsuarioService {
       return localStorage.getItem('token') ? true : false;
     }
   }
-
-

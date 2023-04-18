@@ -11,6 +11,7 @@ import { Ievents } from '../../models/events'
   templateUrl: './event-create.component.html',
   styleUrls: ['./event-create.component.css']
 })
+
 export class EventCreateComponent implements OnInit {
   
   imagem: string | undefined;
@@ -19,7 +20,8 @@ export class EventCreateComponent implements OnInit {
     this.empForm = this.fb.group({
       name:'',
       date:'',
-      custo:'',
+      custoInteira:'',
+      custoMeia:'',
       localizacao:'',
       descricao:'',
       categoria:'',
@@ -35,7 +37,8 @@ export class EventCreateComponent implements OnInit {
     this.empForm = new FormGroup({
       name: new FormGroup(null),
       date: new FormGroup(null),
-      custo: new FormGroup(null),
+      custoInteira: new FormGroup(null),
+      custoMeia: new FormGroup(null),
       localizacao: new FormGroup(null),
       descricao: new FormGroup(null),
       categoria: new FormGroup(null),
@@ -85,7 +88,7 @@ export class EventCreateComponent implements OnInit {
       this._eventService.createevent(this.empForm.value).subscribe({
         next:(val: any) => {
           alert('Evento criado com sucesso!')
-          this._dialogRef.close();
+          const dialogref = this._dialogRef.close();
         },
         error:(err) =>{
           console.error(err)

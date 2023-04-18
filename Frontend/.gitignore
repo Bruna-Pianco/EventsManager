@@ -4,5 +4,9 @@
 npm-debug.log
 yarn-error.log
 package-lock.json
+/.angular
+/.angular/cache/15.2.5/angular-webpack
+/.angular/cache/15.2.5/babel-webpack
+
 
 

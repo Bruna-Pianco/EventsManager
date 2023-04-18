@@ -19,8 +19,6 @@ import { ReactiveFormsModule } from '@angular/forms';
 import { HttpClientModule } from '@angular/common/http';
 import { HomeComponent } from './components/template/home/home.component';
 import { FooterComponent } from './components/template/footer/footer.component';
-import { EventsDeleteComponent } from './components/events-delete/events-delete.component';
-import { EventsUpdateComponent } from './components/events-update/events-update.component';
 import { NgxMatFileInputModule } from '@angular-material-components/file-input';
 import {MatTableModule} from '@angular/material/table';
 import { MatPaginatorModule } from '@angular/material/paginator';
@@ -31,10 +29,10 @@ import { MatMenuModule } from '@angular/material/menu';
 import { LayoutModule } from '@angular/cdk/layout';
 import { EventsReadComponent } from './components/events-read/events-read.component';
 import { LoginComponent } from './account/login/login.component';
-import { AuthGuardService } from './account/shared/auth.guard';
 import { FormsModule } from '@angular/forms';
 import {MatListModule} from '@angular/material/list'
 import {MatSidenavModule} from '@angular/material/sidenav';
+import { DashboardComponent } from './components/template/dashboard/dashboard.component';
 
 
 @NgModule({
@@ -44,10 +42,9 @@ import {MatSidenavModule} from '@angular/material/sidenav';
     EventCreateComponent,
     HomeComponent,
     FooterComponent,
-    EventsDeleteComponent,
-    EventsUpdateComponent,
     EventsReadComponent,
     LoginComponent,
+    DashboardComponent,
   ],
   imports: [
     BrowserModule,
@@ -77,7 +74,6 @@ import {MatSidenavModule} from '@angular/material/sidenav';
     MatSidenavModule
   ],
   providers: [
-    AuthGuardService
   ],
   bootstrap: [AppComponent]
 })

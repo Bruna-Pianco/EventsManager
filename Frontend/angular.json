@@ -4,7 +4,7 @@
   "newProjectRoot": "projects",
   "projects": {
     "Frontend": {
-      "projectType": "application",
+      "projectType": "applicdtion",
       "schematics": {},
       "root": "",
       "sourceRoot": "src",
@@ -95,6 +95,11 @@
           }
         }
       }
+    }
+  },
+  "cli": {
+    "cache": {
+      "enabled": false
     }
   }
 }

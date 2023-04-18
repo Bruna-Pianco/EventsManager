@@ -1,5 +1,6 @@
 const { Events: EventsModel } = require ("../Models/events")
 
+
 const EventsController = {
     create: async(req, res) => {
         try {
@@ -7,7 +8,8 @@ const EventsController = {
             const events = {
                 name: req.body.name,
                 date: req.body.date,
-                custo: req.body.custo,
+                custoInteira: req.body.custoInteira,
+                custoMeia: req.body.custoMeia,
                 localizacao: req.body.localizacao,
                 descricao: req.body.descricao,
                 categoria: req.body.categoria, 
@@ -36,38 +38,17 @@ const EventsController = {
         }
     },
 
-    //GETbyId
-    get: async(req, res) =>{
-        try {
-            const id = req.params.id
-            const events = await EventsModel.findById(id)
-            
-            if(!events){
-                res.status(404).json({msg:'Evento não encontrado!'});
-                return;
-            }
-            res.json(events)
-
-        } catch (error) {
-            console.log(error)
-        }
-    },
-
     //Delete
-    delete: async (req, res) => {
-        try {
-
+    delete:async(req,res)=>{
+        try{ 
             const id = req.params.id
-            const events = await EventsModel.findById(id)
+            const events = await EventsModel.findById(id);
+            const deletedEvents = await EventsModel.findByIdAndDelete(id)
 
-            if(!events){
-                res.status(404).json({msg:'Evento não encontrado!'});
-                return;
-            }
-            const deletedEvents = await EventsModel.findByIdAndDelete
-            res.status(200).json({deletedEvents, msg: "Serviço excluído com sucesso!"})
+            res.status(200).json({deletedEvents, msg:"Evento Serviço com sucesso!"})
 
-        } catch (error) {
+        }
+        catch(error){
             console.log(error)
         }
     },
@@ -75,25 +56,28 @@ const EventsController = {
     update: async (req, res) => {
         const id = req.params.id
 
-        await events.update(request.body, {
-                where: { id: id },
-            })
-            .then((num) => {
-                if (num == 1) {
-                    return response.send({
-                        message: "Evento atualizado",
-                    });
-                } else {
-                    return response.send({
-                        message: `Não foi possível atualizar o evento id: ${id}`,
-                    });
-                }
-            })
-            .catch((error) => {
-                return response.status(550).send({
-                    message: `Erro interno ao atualizar o evento de id: ${id} `,
-                });
-            });
+        const events = {
+            name: req.body.name,
+            date: req.body.date,
+            custoInteira: req.body.custoInteira,
+            custoMeia: req.body.custoMeia,
+            localizacao: req.body.localizacao,
+            descricao: req.body.descricao,
+            categoria: req.body.categoria, 
+            cidade:req.body.cidade, 
+            contato:req.body.contato, 
+            imagem: req.body.imagem,   
+        };
+
+        const UpdateEvents = await EventsModel.findByIdAndUpdate(id, events)
+
+        if(!UpdateEvents){
+            res.status(404).json({msg: "Evento não encontrado!"})
+            return;
+        }
+
+        res.status(200).json({events, msg: "Evento atualizado com sucesso!"})
+ 
     }
 
 

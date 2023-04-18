@@ -106,6 +106,9 @@ h2 h3 {
         padding: 0 40px 40px;
     }
 
+    form{
+        height: 40vh; 
+    }
 
 }
 
@@ -114,5 +117,10 @@ h2 h3 {
         flex-wrap: wrap;
         justify-content: center;
     }
+
+    form{
+        height: 60vh; 
+    }
+
 
 }

@@ -2,7 +2,7 @@ const mongoose = require('mongoose')
 const { Schema } = mongoose
 
 const eventsSchema = new Schema({
-    name: {
+       name: {
         type: String,
         require: true
     },
@@ -10,7 +10,11 @@ const eventsSchema = new Schema({
         type: Date,
         require: true
     },
-    custo: {
+    custoInteira: {
+        type: String,
+        require: true
+    },
+    custoMeia: {
         type: String,
         require: true
     },

@@ -18,6 +18,12 @@
         <mat-datepicker #picker></mat-datepicker>
       </mat-form-field>
     </div>
+    <mat-form-field class="width" appearance="outline">
+      <mat-label>Categoria</mat-label>
+      <mat-select matNativeControl required formControlName="categoria">
+        <mat-option *ngFor="let val of Categoria" [value]="val">{{val}}</mat-option>
+      </mat-select>
+    </mat-form-field>
     <div class="row">
       <mat-form-field  appearance="outline">
         <mat-label>Localização</mat-label>
@@ -34,14 +40,12 @@
      </div>
      <div class="row">
       <mat-form-field appearance="outline">
-        <mat-label>Preço $</mat-label>
-        <input required matInput type="text" formControlName="custo">
+        <mat-label>Preço Inteira $</mat-label>
+        <input required matInput type="text" formControlName="custoInteira">
       </mat-form-field>
       <mat-form-field appearance="outline">
-        <mat-label>Categoria</mat-label>
-        <mat-select matNativeControl required formControlName="categoria">
-          <mat-option *ngFor="let val of Categoria" [value]="val">{{val}}</mat-option>
-        </mat-select>
+        <mat-label>Preço Meia-Entrada $</mat-label>
+        <input required matInput type="text" formControlName="custoMeia">
       </mat-form-field>
      </div>
    <div class="row">

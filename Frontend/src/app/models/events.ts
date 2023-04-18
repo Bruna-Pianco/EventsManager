@@ -1,5 +1,5 @@
 export interface Ievents{
-    _id:string;
+    id:string | undefined;
     name: String,
     date: Date,
     custo: String,
