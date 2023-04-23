@@ -11,6 +11,9 @@ router.route("/events").post((req, res) => EventsController.create(req,res));
 //busca todos os eventos
 router.route("/eventsget").get((req, res) => EventsController.getAll(req,res));
 
+//busca evento por id
+router.route("/events/:id").get((req, res) => EventsController.getId(req,res));
+
 //delete evento by id
 router.route("/events/:id").delete((req, res) => EventsController.delete(req,res));
 

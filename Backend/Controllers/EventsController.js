@@ -38,6 +38,18 @@ const EventsController = {
         }
     },
 
+    getId: async (req, res) =>{
+        try{
+        const id = req.params.id
+        const event = await EventsModel.findById(id)
+        res.json(event)
+
+
+        }catch (error){
+            console.log(error)
+        }
+    },
+
     //Delete
     delete:async(req,res)=>{
         try{ 
@@ -45,7 +57,7 @@ const EventsController = {
             const events = await EventsModel.findById(id);
             const deletedEvents = await EventsModel.findByIdAndDelete(id)
 
-            res.status(200).json({deletedEvents, msg:"Evento Serviço com sucesso!"})
+            res.status(200).json({deletedEvents, msg:"Evento deletado com sucesso!"})
 
         }
         catch(error){
@@ -66,7 +78,6 @@ const EventsController = {
             categoria: req.body.categoria, 
             cidade:req.body.cidade, 
             contato:req.body.contato, 
-            imagem: req.body.imagem,   
         };
 
         const UpdateEvents = await EventsModel.findByIdAndUpdate(id, events)
@@ -78,8 +89,7 @@ const EventsController = {
 
         res.status(200).json({events, msg: "Evento atualizado com sucesso!"})
  
-    }
-
-
+    },
 }
+
 module.exports = EventsController;

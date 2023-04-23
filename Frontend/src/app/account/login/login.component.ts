@@ -2,10 +2,10 @@ import { Component, OnInit  } from '@angular/core';
 import { MatDialog } from '@angular/material/dialog';
 import { Router } from '@angular/router';
 import { FormBuilder, FormGroup, Validators, FormsModule } from '@angular/forms';
-import { IUsuario } from '../../models/usuario'
 import { MatSnackBar } from '@angular/material/snack-bar';
-import { ILogin } from '../../models/login.interface';
 import { LoginService } from './login.service';
+import { ILogin } from '../../models/login.interface';
+import { IUsuario } from '../../models/usuario'
 
 
 
@@ -44,5 +44,6 @@ export class LoginComponent implements OnInit {
     this.router.navigate(['/home']);
   }
 }
+
 
 

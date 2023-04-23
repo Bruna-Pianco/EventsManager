@@ -13,16 +13,17 @@
       <mat-form-field  class="width" appearance="outline">
         <mat-label>Data do evento</mat-label>
         <input  required  matInput [matDatepicker]="picker" formControlName="date">
-        <mat-hint>MM/DD/YYYY</mat-hint>
         <mat-datepicker-toggle matIconSuffix [for]="picker"></mat-datepicker-toggle>
         <mat-datepicker #picker></mat-datepicker>
       </mat-form-field>
     </div>
     <mat-form-field class="width" appearance="outline">
       <mat-label>Categoria</mat-label>
-      <mat-select matNativeControl required formControlName="categoria">
+      <input required matInput type="text" formControlName="categoria">
+      <!-- <mat-select matNativeControl required formControlName="categoria">
         <mat-option *ngFor="let val of Categoria" [value]="val">{{val}}</mat-option>
-      </mat-select>
+        
+      </mat-select> -->
     </mat-form-field>
     <div class="row">
       <mat-form-field  appearance="outline">
@@ -33,10 +34,6 @@
         <mat-label>Cidade</mat-label>
         <input required matInput type="text" formControlName="cidade">
       </mat-form-field>
-      <!-- <mat-form-field appearance="outline">
-        <mat-label>Categoria</mat-label>
-        <input matInput type="text">
-      </mat-form-field> -->
      </div>
      <div class="row">
       <mat-form-field appearance="outline">
@@ -58,15 +55,9 @@
       <input required matInput type="email" formControlName="contato">
     </mat-form-field>
    </div>
-  <!-- <div class="row"> 
-      <mat-form-field class="width"  appearance="outline">
-        <ngx-mat-file-input  (change)= "onFileSelected($event)" matInput formControlName="imagem">
-          </ngx-mat-file-input>
-       </mat-form-field>
-   </div> -->
 </div>
-<input class="input" type='file' name="file" id="file" (change)="onChange($event)">
 <div mat-dialog-action class="action">
   <button class="row" mat-raised-button type="submit" color="primary">Salvar</button>
 </div>
 </form>
+

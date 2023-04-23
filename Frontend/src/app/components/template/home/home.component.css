@@ -1,23 +1,64 @@
-.btn {
-    width: 20vh;
-    margin-bottom: 1vh;
-    font-size: 1.2vh;
-    margin-top: 1vh;
-    margin-left: 1vh;
-  }
-
-  .example-spacer {
-    flex: 1 1 auto;
-  }
-
-  mat-toolbar{
-    background-color: #F0F8FF;
-  }
-  
-  .btn:hover {
-    background-color: #4682B4;
+.container_table{
+  margin-left: 50px;
+  margin-right: 50px;
+  margin-top: 20px;
 }
 
+.titulo{
+  background-color:#fff;
+  font-family: Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
+  font-size: 16px;
+}
+
+table,
+paginator{
+  width: 100%;
+  background-color:#F0F8FF;
+}
+
+.mat-header-cell,
+.mat-cell
+{
+ text-align: center;
+ color: black;
+ font-family: Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
+  font-size: 14px
+}
+
+.edit {
+  margin-right: 15px;
+}
+
+.edit > i {
+  color: #4682B4;
+}
+
+.delete > i {
+  color: #d11507;
+}
+
+.coluna{
+  width: 10%;
+  text-align: center;
+}
+
+
+.btn {
+  width: 20vh;
+  margin-bottom: 1vh;
+  font-size: 1.2vh;
+  margin-top: 1vh;
+  margin-left: 1vh;
+}
+
+.example-spacer {
+  flex: 1 1 auto;
+}
+
+
+.btn:hover {
+  background-color: #4682B4;
+}
 
 
     /* RESPONSIVIDADE */
@@ -28,8 +69,14 @@
     margin-left: 5vh;
     font-size: 15px;
   }
-
+  .icon{
+    flex-direction: column;
+  }
+    table{
+      flex-direction: column;
+    }
 }
+
 
 @media(max-width:768px) and (max-width: 992px) {
 
@@ -38,6 +85,12 @@
     margin-left: 5vh;
     font-size: 15px;
   }
+  .icon{
+    flex-direction: column;
+}
+table{
+  flex-direction: column;
+}
 
 }
 
@@ -47,5 +100,11 @@
     margin-left: 5vh;
     font-size: 15px;
   }
+  .icon{
+    flex-direction: column;
+}
+table{
+  flex-direction: column;
+}
 
 }

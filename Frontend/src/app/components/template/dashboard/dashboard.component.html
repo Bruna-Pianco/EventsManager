@@ -1,15 +1,12 @@
-<!-- Cards with media area -->
-<mat-card class="card1">
-    <mat-card-header>
-      <mat-card-title-group>
-        <mat-card-title>Shiba Inu</mat-card-title>
-        <mat-card-subtitle>Small</mat-card-subtitle>
-        <img mat-card-sm-image src="https://material.angular.io/assets/img/examples/shiba2.jpg" >
-      </mat-card-title-group>
-    </mat-card-header>
-    <mat-card-content>
-      <app-events-read></app-events-read>
-    </mat-card-content>
-  </mat-card>
-  
-  
+    <div class="demo">
+        <h3>PRÓXIMOS EVENTOS</h3>
+        <carousel
+            [images]="imagesForSlider"
+            [objectFit]="'cover'"
+            [cellWidth]="'100%'"
+            [height]="420"
+            [autoplay]="true"
+            [dots]="true"
+            [loop]="true">
+        </carousel>
+    </div>

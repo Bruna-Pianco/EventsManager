@@ -1,9 +1,11 @@
 import { DialogRef } from '@angular/cdk/dialog';
-import { Component, OnInit } from '@angular/core';
+import { Component, Inject, OnInit} from '@angular/core';
 import { FormBuilder, FormGroup, FormControl } from '@angular/forms';
 import { EventsService } from 'src/app/services/events.service';
-import { Router } from '@angular/router';
-import { Ievents } from '../../models/events'
+import { MAT_DIALOG_DATA, MatDialog, MatDialogRef } from '@angular/material/dialog'
+import { Router, ActivatedRoute } from '@angular/router';
+
+
 
 
 @Component({
@@ -13,10 +15,28 @@ import { Ievents } from '../../models/events'
 })
 
 export class EventCreateComponent implements OnInit {
-  
-  imagem: string | undefined;
-  
-  constructor(private fb: FormBuilder, private _eventService:EventsService, private _dialogRef: DialogRef <EventCreateComponent>) {
+
+  empForm: FormGroup;
+  // Categoria: string []=
+  // [
+  //   'Rock',
+  //   'Pop',
+  //   'Eletrônica',
+  //   'Metalcore',
+  //   'RAP',
+  //   'Sertanejo',
+  //   'Forró'
+  // ];
+
+  constructor(
+    private fb: FormBuilder, 
+    private _eventService:EventsService, 
+    private _dialogRef: DialogRef <EventCreateComponent>,
+    private router: Router,
+    private route: ActivatedRoute ,
+    @Inject(MAT_DIALOG_DATA) public data: any,
+    ) 
+    {
     this.empForm = this.fb.group({
       name:'',
       date:'',
@@ -31,70 +51,47 @@ export class EventCreateComponent implements OnInit {
     })   
   }
 
-  
-
   ngOnInit(): void {
-    this.empForm = new FormGroup({
-      name: new FormGroup(null),
-      date: new FormGroup(null),
-      custoInteira: new FormGroup(null),
-      custoMeia: new FormGroup(null),
-      localizacao: new FormGroup(null),
-      descricao: new FormGroup(null),
-      categoria: new FormGroup(null),
-      cidade: new FormGroup(null),
-      contato: new FormGroup(null),
-      imagem:new FormGroup(null),
-    })
-
-  }
-
-
-  onChange(event: any){
-    const file = event.target.files[0];
-    this.empForm.patchValue({ image: File})
-    const allowedMimeTypes = ["imagem/png","imagem/jpeg","imagem/jpg"];
-    
-    if(file && allowedMimeTypes.includes(file.type)){
-      
+    // this.empForm = new FormGroup({
+    //   name: new FormGroup(null),
+    //   date: new FormGroup(null),
+    //   custoInteira: new FormGroup(null),
+    //   custoMeia: new FormGroup(null),
+    //   localizacao: new FormGroup(null),
+    //   descricao: new FormGroup(null),
+    //   categoria: new FormGroup(null),
+    //   cidade: new FormGroup(null),
+    //   contato: new FormGroup(null),
+    //   imagem:new FormGroup(null),
+    this.empForm.patchValue(this.data);
+    const id = this.route.snapshot.paramMap.get('_id')
     }
 
-    
-  }
-  
-  empForm: FormGroup;
-  Categoria: string []=
-  [
-    'Rock',
-    'Pop',
-    'Eletrônica',
-    'Metalcore',
-    'RAP',
-    'Sertanejo',
-    'Forró'
-  ];
+    // onFormSubmit() {
+    //   if(this.empForm.valid){
+    //     this._eventService.createevent(this.empForm.value).subscribe({
+    //       next:(val: any) => {
+    //         alert('Evento criado com sucesso!')
+    //         const dialogref = this._dialogRef.close();
+    //       },
+    //       error:(err) =>{
+    //         console.error(err)
+    //       }
+    //     })
+    //   }
+    // }
 
-  // public GetFileOnLoad(event: any) {
-  //   var file = event.target.files[0];
-  //   var element = document.getElementById("fakeFileInput") as HTMLInputElement | null;
-  //   if(element != null) {
-  //     element.value = file?.name;
-  //   }
-
-  // }
-  
-  onFormSubmit() {
-    if(this.empForm.valid){
-      this._eventService.createevent(this.empForm.value).subscribe({
-        next:(val: any) => {
-          alert('Evento criado com sucesso!')
-          const dialogref = this._dialogRef.close();
-        },
-        error:(err) =>{
-          console.error(err)
-        }
-      })
+    onFormSubmit() {
+      if(this.empForm.valid){
+        this._eventService.createevent(this.empForm.value).subscribe({
+          next:(val: any) => {
+            this._eventService.showMessage('Evento criado com sucesso!')
+            const dialogref = this._dialogRef.close();
+          },
+          error:(err) =>{
+            console.error(err)
+          }
+        })
+      }
     }
-  }
-
-}
+} 

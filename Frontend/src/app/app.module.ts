@@ -27,12 +27,18 @@ import { MatGridListModule } from '@angular/material/grid-list';
 import { MatCardModule } from '@angular/material/card';
 import { MatMenuModule } from '@angular/material/menu';
 import { LayoutModule } from '@angular/cdk/layout';
-import { EventsReadComponent } from './components/events-read/events-read.component';
 import { LoginComponent } from './account/login/login.component';
 import { FormsModule } from '@angular/forms';
 import {MatListModule} from '@angular/material/list'
 import {MatSidenavModule} from '@angular/material/sidenav';
 import { DashboardComponent } from './components/template/dashboard/dashboard.component';
+import { EventsUpdateComponent } from './components/events-update/events-update.component';
+import { MatSnackBarModule } from '@angular/material/snack-bar';
+import { NgImageSliderModule } from 'ng-image-slider';
+import {IvyCarouselModule} from 'angular-responsive-carousel';
+
+
+
 
 
 @NgModule({
@@ -42,9 +48,9 @@ import { DashboardComponent } from './components/template/dashboard/dashboard.co
     EventCreateComponent,
     HomeComponent,
     FooterComponent,
-    EventsReadComponent,
     LoginComponent,
     DashboardComponent,
+    EventsUpdateComponent,
   ],
   imports: [
     BrowserModule,
@@ -71,7 +77,13 @@ import { DashboardComponent } from './components/template/dashboard/dashboard.co
     LayoutModule,
     FormsModule,
     MatListModule,
-    MatSidenavModule
+    MatSidenavModule,
+    MatSnackBarModule,
+    NgImageSliderModule,
+    IvyCarouselModule
+    
+    
+
   ],
   providers: [
   ],

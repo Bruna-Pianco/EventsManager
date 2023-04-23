@@ -1,0 +1,64 @@
+<div class="container">
+  <span class="title">
+      <h3>Atualizar Evento</h3>
+  </span>
+
+  <div id="atualizar-container">
+  <form>
+    <div class="formControlName">
+      <mat-form-field class="example-full-width">
+        <mat-label>Nome</mat-label>
+        <input  class="form-control" matInput placeholder="Nome" [(ngModel)]="events.name" name="name">
+      </mat-form-field>
+    </div>
+    <div>
+       <mat-form-field class="example-full-width">
+        <mat-label>Data</mat-label>
+        <input class="form-control" matInput placeholder="Data" [(ngModel)]="events.date" name="date">
+      </mat-form-field>
+    </div>
+     <div>
+      <mat-form-field class="example-full-width">
+        <mat-label>Inteira</mat-label>
+        <input  class="form-control" matInput placeholder="Preço Inteira R$" [(ngModel)]="events.custoInteira" name="custoInteira">
+      </mat-form-field>
+    </div>
+    <div>
+    <mat-form-field class="example-full-width">
+      <mat-label>Meia Entrada</mat-label>
+      <input class="form-control" matInput placeholder="Preço Meia Entrada" [(ngModel)]="events.custoMeia" name="custoMeia">
+    </mat-form-field>
+    </div>
+      <div>
+        <mat-form-field class="example-full-width">
+          <mat-label>Localização</mat-label>
+          <input class="form-control" matInput placeholder="localização" [(ngModel)]="events.localizacao" name="localizacao">
+        </mat-form-field>
+      </div>
+      <div>
+      <mat-form-field class="example-full-width">
+        <mat-label>Descrição</mat-label>
+        <input class="form-control" matInput  placeholder="Descrição" [(ngModel)]="events.descricao" name="descricao">
+      </mat-form-field>
+    </div>
+     <div>
+        <mat-form-field class="example-full-width">
+            <mat-label>Categoria</mat-label>
+            <input class="form-control" required matInput type="text" [(ngModel)]="events.categoria" name="categoria">
+        </mat-form-field>
+      </div> 
+      <div>
+      <mat-form-field class="example-full-width">
+        <mat-label>Cidade</mat-label>
+        <input class="form-control" matInput placeholder="Contato" [(ngModel)]="events.cidade" name="cidade">
+    </mat-form-field>
+  </div> 
+  </form>
+</div>
+  <button mat-raised-button color="primary" (click)="updateevent()">
+      Atualizar
+  </button>
+  <button mat-raised-button color="warn" (click)="cancel()">
+      Cancelar
+  </button>
+</div>

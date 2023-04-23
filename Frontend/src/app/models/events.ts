@@ -1,8 +1,9 @@
 export interface Ievents{
-    id:string | undefined;
+    _id?:string,
     name: String,
-    date: Date,
-    custo: String,
+    date: String,
+    custoInteira:string,
+    custoMeia:string,
     localizacao:String,
     descricao: String,
     categoria: String,
