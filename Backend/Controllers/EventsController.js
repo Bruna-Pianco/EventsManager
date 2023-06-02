@@ -90,6 +90,17 @@ const EventsController = {
         res.status(200).json({events, msg: "Evento atualizado com sucesso!"})
  
     },
-}
+
+            deleteAllevents:async(req,res)=>{
+                try{ 
+                    const deletedEvents = await EventsModel.deleteMany()
+                    res.status(200).json({deletedEvents, msg:"Eventos deletados com sucesso!"})
+        
+                }
+                catch(error){
+                    res.status(200).json({events, msg: "Erro ao deletar eventos!"})
+                }
+            },
+}  
 
 module.exports = EventsController;

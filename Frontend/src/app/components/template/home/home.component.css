@@ -61,6 +61,16 @@ paginator{
 }
 
 
+.excluir{
+  width: 20vh;
+  margin-bottom: 1vh;
+  font-size: 1vh;
+}
+
+.excluir:hover {
+  background-color: #4682B4;
+}
+
     /* RESPONSIVIDADE */
 @media(max-width:992px) and (max-width:1220px) {
 

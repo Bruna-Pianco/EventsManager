@@ -115,4 +115,16 @@ export class HomeComponent  implements OnInit{
       this.router.navigate(['/home']);
     }
 
+
+    deleteAllevents(){
+      this._eventService.deleteAllevents().subscribe({
+        next:(res) => {
+          this._eventService.showMessage('Eventos deletados com sucesso!')
+          this.getEventsAll();
+  
+        }, 
+        error:console.log,
+      })
+    }
+
 }

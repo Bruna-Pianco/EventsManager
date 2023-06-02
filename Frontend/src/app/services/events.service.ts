@@ -34,16 +34,15 @@ export class EventsService {
   deleteevent(id:string):Observable<any>{
     return this._http.delete(`http://localhost:3000/api/events/${id}`);
   }
-  
-  // updateevent(id: string,data: any): Observable<any> {
-  //   return this._http.put(`http://localhost:3000/api/events/${id}`, data);
-  // }
+
+  deleteAllevents():Observable<any>{
+    return this._http.delete(`http://localhost:3000/api/deleteEvents`);
+  }
 
   updateevent(events: Ievents): Observable<any> {
     const url = `${this.baseUrl}/${events._id}`;
     return this._http.put<Ievents>(url, events);
   }
-
 
   readById(id: string | null): Observable<any> {
     return this._http.get<Ievents>(`http://localhost:3000/api/events/${id}`);

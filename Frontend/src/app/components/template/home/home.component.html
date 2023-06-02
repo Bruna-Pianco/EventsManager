@@ -7,12 +7,18 @@
   SAIR
 </button>
 </mat-toolbar>
-<app-dashboard></app-dashboard>
+<!-- <app-dashboard></app-dashboard> -->
+
 <div class="container_table">
   <mat-form-field>
     <mat-label>Filtro</mat-label>
     <input matInput (keyup)="applyFilter($event)" placeholder="Ex. Lollapalooza" #input>
   </mat-form-field>
+  <div>
+    <button class="excluir" mat-raised-button (click)="deleteAllevents()">
+      EXCLUIR TODOS OS EVENTOS
+  </button>
+  </div>
   <div  class="mat-elevation-z4">
     <table mat-table [dataSource]="dataSource" matSort>
       <ng-container matColumnDef="_id">
@@ -61,7 +67,7 @@
       <tr mat-header-row *matHeaderRowDef="displayedColumns"></tr>
       <tr mat-row *matRowDef="let row; columns: displayedColumns;"></tr>
       <tr class="mat-row" *matNoDataRow>
-        <td class="mat-cell" colspan="4">Sem eventos cadastrados "{{input.value}}"</td>
+        <td class="mat-cell" colspan="4">Sem eventos cadastrados</td>
       </tr>
     </table>
     <!-- <mat-paginator  [pageSizeOptions]="[5, 10, 25, 100]" aria-label="Select page of users"></mat-paginator> -->
