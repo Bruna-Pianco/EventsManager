@@ -3,8 +3,8 @@
 const mongoose = require('mongoose');
 
 //porta e conexão com o banco
-const DB_USER = 'brunamagalhaes02'
-const DB_PASSWORD = encodeURIComponent ('671H8KPlr18H0JB7')
+const DB_USER = 'seuUser'
+const DB_PASSWORD = encodeURIComponent ('suaSenha')
 
 async function main(){
     try {
