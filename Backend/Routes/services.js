@@ -23,5 +23,7 @@ router.route("/deleteEvents").delete((req, res) => EventsController.deleteAlleve
 //update
 router.route("/events/:id").put((req, res) => EventsController.update(req,res));
 
+//Patch
+router.route("/updatename/:id").patch((req, res) => EventsController.patchEvents(req,res));
 
 module.exports = router

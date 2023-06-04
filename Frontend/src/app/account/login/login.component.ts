@@ -4,7 +4,7 @@ import { Router } from '@angular/router';
 import { FormBuilder, FormGroup, Validators, FormsModule } from '@angular/forms';
 import { MatSnackBar } from '@angular/material/snack-bar';
 import { LoginService } from './login.service';
-import { ILogin } from '../../models/login.interface';
+import { ILogin } from '../../models/login'
 import { IUsuario } from '../../models/usuario'
 
 

@@ -83,7 +83,7 @@ const EventsController = {
         const UpdateEvents = await EventsModel.findByIdAndUpdate(id, events)
 
         if(!UpdateEvents){
-            res.status(404).json({msg: "Evento não encontrado!"})
+            res.status(404).json({msg: "Evento não atualizado!"})
             return;
         }
 
@@ -98,9 +98,26 @@ const EventsController = {
         
                 }
                 catch(error){
-                    res.status(200).json({events, msg: "Erro ao deletar eventos!"})
+                    res.status(400).json({events, msg: "Erro ao deletar eventos!"})
                 }
             },
+
+
+            patchEvents: async (req, res) => {
+                try{
+                    const id = req.params.id
+                    const patch = {
+                        name: req.body.name,
+
+                    };
+                    const UpdateEvents = await EventsModel.findByIdAndUpdate(id, patch)
+                    res.status(200).json({msg: "Nome do evento atualizado com sucesso!"})
+                }
+               catch(error){
+                res.status(400).json({msg: "Erro ao atualizar o nome do evento!"})
+               }
+              },
+
 }  
 
 module.exports = EventsController;

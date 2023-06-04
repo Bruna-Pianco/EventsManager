@@ -1,16 +1,16 @@
 import { Component, EventEmitter, OnInit, Output } from '@angular/core';
 import { EventsService } from '../../../services/events.service';
-import { Ievents } from '../../../models/events'
 import { MatDialog } from '@angular/material/dialog';
 import {AfterViewInit, ViewChild} from '@angular/core';
 import {MatPaginator} from '@angular/material/paginator';
 import {MatSort} from '@angular/material/sort';
 import {MatTableDataSource} from '@angular/material/table';
 import { EventCreateComponent } from '../../event-create/event-create.component';
-import { LoginService } from '../../../account/login/login.service';
 import { Router } from '@angular/router';
 import { DialogRef } from '@angular/cdk/dialog';
 import { FormBuilder, FormGroup, FormControl } from '@angular/forms';
+import { Ievents } from '../../../models/events'
+import { IEditName } from '../../../models/EditName';
 
 
 
@@ -21,22 +21,42 @@ import { FormBuilder, FormGroup, FormControl } from '@angular/forms';
 })
 
 export class HomeComponent  implements OnInit{
-  displayedColumns: string[] = ['_id','name', 'date','cidade','custoInteira','custoMeia','contato','action'];
+
+  events: Ievents = {
+    name: '',
+    date: '',
+    custoInteira: '',
+    custoMeia:'',
+    localizacao: '',
+    descricao: '',
+    categoria: '',
+    cidade: '',
+    contato: '',
+    imagem: ''
+  };
+
+  NameEdit: FormGroup;
+
+  displayedColumns: string[] = ['_id','name', 'date','cidade','custoInteira','custoMeia','contato','updateName','action'];
   dataSource!: MatTableDataSource<any>;
 
   @ViewChild(MatPaginator) paginator!: MatPaginator;
   @ViewChild(MatSort) sort!: MatSort;
 
-
+  
 
   constructor(
     private _dialog: MatDialog, 
+    private fb: FormBuilder, 
     private _eventService:EventsService, 
-    fb: FormBuilder,
     private router: Router,
     ) {
- }
-
+      this.NameEdit = this.fb.group({
+        name:'',
+  
+      }) 
+      
+    }
  ngOnInit(): void {
   this.getEventsAll()
  }
@@ -127,4 +147,35 @@ export class HomeComponent  implements OnInit{
       })
     }
 
-}
+    // EditName(_id:string){
+    //   const dialogRef = this._dialog.open(UpdateNameComponent,{
+    //     height: '150px',
+    //     width: '300px',
+    //   })        
+    //   dialogRef.afterClosed().subscribe({
+    //   next: (val) => {
+    //     if (val) {
+    //       this.getEventsAll();
+    //     }
+    //   },
+    // });
+    // }
+
+    // open(data: any) {
+    //   const dialogRef = this._dialog.open(UpdateNameComponent, {
+    //     data,
+    //     height: '150px',
+    //     width: '300px',
+    //   });
+  
+    //   dialogRef.afterClosed().subscribe({
+    //     next: (val) => {
+    //       if (val) {
+    //         this.getEventsAll();
+    //       }
+    //     },
+    //   });
+    // }
+
+
+  }

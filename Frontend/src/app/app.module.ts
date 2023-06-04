@@ -36,6 +36,9 @@ import { EventsUpdateComponent } from './components/events-update/events-update.
 import { MatSnackBarModule } from '@angular/material/snack-bar';
 import { NgImageSliderModule } from 'ng-image-slider';
 import {IvyCarouselModule} from 'angular-responsive-carousel';
+import { UpdatenameComponent } from './components/updatename/updatename.component';
+
+
 
 
 
@@ -51,6 +54,10 @@ import {IvyCarouselModule} from 'angular-responsive-carousel';
     LoginComponent,
     DashboardComponent,
     EventsUpdateComponent,
+    UpdatenameComponent,
+
+
+
   ],
   imports: [
     BrowserModule,

@@ -3,7 +3,7 @@ import { Injectable } from '@angular/core';
 import { Router } from '@angular/router';
 import { Observable } from 'rxjs';
 import { IUsuario } from '../../models/usuario'
-import { ILogin } from '../../models/login.interface';
+import { ILogin } from '../../models/login'
 
 @Injectable({
   providedIn: 'root',

@@ -1,0 +1,22 @@
+<div class="container">
+    <span class="title">
+        <h3>Atualizar Nome</h3>
+    </span>
+  
+    <div id="atualizar-container">
+    <form>
+      <div class="formControlName">
+        <mat-form-field class="example-full-width">
+          <mat-label>Nome</mat-label>
+          <input  class="form-control" matInput placeholder="Nome" [(ngModel)]="name.name" name="name">
+        </mat-form-field>
+      </div>
+    </form>
+  </div>
+    <button mat-raised-button color="primary" (click)="EditName()">
+        Atualizar
+    </button>
+    <button mat-raised-button color="warn" (click)="cancel()">
+        Cancelar
+    </button>
+  </div>
